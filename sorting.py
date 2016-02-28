@@ -16,5 +16,5 @@ if __name__ == '__main__':
     test_list = random.sample(range(-5, 10), 10)
     print "Unsorted:"
     print test_list
-    print "Sorted:"
+    print "Sorted by Bubble sort:"
     print bubble_sort(test_list)
