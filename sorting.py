@@ -28,16 +28,17 @@ def improve_bubble_sort(_list):
     return _list
 
 
+def timer(x, y):
+    return str(timeit.Timer(stmt=x, setup=y).timeit(5))
+
+
 if __name__ == '__main__':
     print "Unsorted:"
     print test_list
     print "Sorted by Bubble sort:"
     print bubble_sort(test_list)
-    print "time for basic bubble sort"
-    t = timeit.Timer(stmt="sorting.bubble_sort(sorting.test_list)", setup="import sorting")
-    print t.timeit(5)
     print "Sorted by Improved Bubble sort:"
     print improve_bubble_sort(test_list)
-    print "time for improved bubble sort"
-    t = timeit.Timer(stmt="sorting.improve_bubble_sort(sorting.test_list)", setup="import sorting")
-    print t.timeit(5)
+    print "time for basic bubble sort: " + timer("sorting.bubble_sort(sorting.test_list)", "import sorting")
+    print "time for improved bubble sort: " + timer("sorting.improve_bubble_sort(sorting.test_list)",
+                                                    "import sorting")
