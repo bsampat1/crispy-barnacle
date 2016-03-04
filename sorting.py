@@ -5,7 +5,7 @@
 import random
 import timeit
 
-test_list = random.sample(range(-5, 10), 10)
+test_list = random.sample(range(-5000, 10000), 10000)
 
 
 def bubble_sort(_list):
@@ -29,7 +29,7 @@ def improve_bubble_sort(_list):
 
 
 def timer(x, y):
-    return str(timeit.Timer(stmt=x, setup=y).timeit(5))
+    return str((timeit.Timer(stmt=x, setup=y).timeit(5))/5)
 
 
 if __name__ == '__main__':
